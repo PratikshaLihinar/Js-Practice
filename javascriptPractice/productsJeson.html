@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>product using json</title>
+    <script>
+        function Display() {
+            product = [{ "product_id": 1, "p_name": "pen", "rate": 20, "stock": 80, "description": "their is no description for this product." },
+            { "product_id": 2, "p_name": "pencile", "rate": 90, "stock": 80, "description": "their is no description for this product." },
+            { "product_id": 3, "p_name": "black pen", "rate": 80, "stock": 80, "description": "their is no description for this product." },]
+        }
+        data="";
+        product.forEach(function(d,i) {
+            data += "<h1>"+d.product_id+" "+d.p_name+"</h1><hr><h3>"+d.rate+" "+d.stock+" "+ d.description+"</h3><hr>";
+            
+        });
+        document.getElementById("heading").innerHTML=data;
+
+    </script>
+</head>
+
+<body onload="Diaplay()">
+<h1 id="heading"></h1>
+
+</body>
+
+</html>

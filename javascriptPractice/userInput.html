@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>user input</title>
+    <script>
+        function add() {
+            var n1 = Number(document.getElementById("first".value));
+            var n2 = Number(document.getElementById("second".value));
+            var c = n1 + n1;
+            var d = n1 - n1;
+            document.getElementById("di").innerHTML = "Addition is: " + c;
+            // document.getElementById("dv").innerHTML= "Substraction is: " + d ;
+
+
+
+        }
+    </script>
+</head>
+
+<body>
+    Enter a number: <input type="text" name="" id="first" />
+    Enter a number: <input type="text" name="" id="second" />
+    <input type="button" value="Addition" onclick="add()" />
+    
+    <div id="di"></div>
+    <div id="dv"></div>
+
+</body>
+
+</html>

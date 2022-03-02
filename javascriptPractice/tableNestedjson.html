@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>using table instert json data</title>
+    <script>
+        function Display() {
+            var data = [{
+                "state_id": 1, "name": "maharashtra", "cities": [{ "cid": 1, "cname": "pune" },
+                { "cid": 2, "cname": "mumbai" }]
+            },
+            {
+                "state_id": 2, "name": "gujrat", "cities": [{ "cid": 3, "cname": "surat" },
+                { "cid": 4, "cname": "gandhi nagar" }]
+            }
+            ]
+
+            var data1 = "";
+
+            data.forEach(function (d, i) {
+                data1 = data1 + "<tr><td>" + d.state_id + " </td><td>" + d.name + "</td></tr><tr><td colspan='2'><table border='1'><tr><th>City id</th><th>City Name</th></tr>";
+                d.cities.forEach(function (d, j) {
+                    data1 = data1 + "<tr><td>" + d.cid +"</td><td>" + d.cname +"</td></tr>";
+                });
+                data1 += "</table></tr>"
+
+            });
+            document.getElementById("state").innerHTML = data1;
+        }
+
+    </script>
+</head>
+<body onload="Display()">
+    <table id="mytable" border="1"> 
+        <thead >
+            <tr>
+                <th>State_id</th>
+                <th>State Name</th>
+            </tr>
+            
+        </thead>
+        <tbody id="state">
+            
+
+
+            
+        </tbody>
+   
+    </table>
+    
+</body>
+</html>

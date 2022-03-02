@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>nested json</title>
+    <script>
+        function Display() {
+            var data = [{
+                "state_id": 1, "name": "maharashtra", "cities": [{ "cid": 1, "cname": "pune" },
+                { "cid": 2, "cname": "mumbai" }]
+            },
+            {
+                "state_id": 2, "name": "gujrat", "cities": [{ "cid": 3, "cname": "surat" },
+                { "cid": 4, "cname": "gandhi nagar" }]
+            }
+            ]
+
+            var data1 = "";
+
+            data.forEach(function (d, i) {
+                data1 = data1 + "<li>" + d.state_id + " " + d.name + "<ul>";
+                d.cities.forEach(function (d, j) {
+                    data1 = data1 + "<li>" + d.cid + " " + d.cname + "</li>";
+                });
+                data1 += "</ul></li>"
+
+            });
+            document.getElementById("state").innerHTML = data1;
+        }
+    </script>
+</head>
+
+<body onload="Display()">
+    <ul id="state">
+
+    </ul>
+
+
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jeson 2 for table</title>
+    <script>
+    function Display(){
+        student=[{"rno":1,"name":"prats"},
+        {"rno":2,"name":"sky"},
+        {"rno":3,"name":"blue"}];
+        var data="";
+        student.forEach(function(d,i) {
+            data = data +"<tr><td>"+d.rno+"</td><td>"+d.name+"</td></tr>";
+            
+        });
+        document.getElementById("tbldata").innerHTML=data;
+    }
+    </script>
+</head>
+<body onload="Display()">
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Roll No</th>
+                <th>Name</th>
+
+            </tr>
+        </thead>
+        <tbody id="tbldata">
+
+        </tbody>
+    </table>
+
+    
+</body>
+</html>

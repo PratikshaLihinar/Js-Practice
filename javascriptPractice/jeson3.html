@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jeson 3 for table</title>
+    <script>
+        function Display() {
+            student = [{ "rno": 1, "name": "pratiksha", "eng": 80, "math": 50, "sci": 60 },
+            { "rno": 2, "name": "diksha", "eng": 80, "math": 80, "sci": 70 },
+            { "rno": 3, "name": "rushi", "eng": 70, "math": 75, "sci": 78 },
+            { "rno": 4, "name": "nhumi", "eng": 30, "math": 35, "sci": 37 }]
+            var data = "";
+
+            student.forEach(function (d, i) {
+                var total = Number(d.eng) + Number(d.math) + Number(d.sci);
+                var per = (total / 3).toFixed(2);
+                var result = "Pass";
+                var c="green";
+                if (per < 50) {
+                    result = "Fail";
+                    c="red";
+
+                }
+                data += "<tr style='background-color:"+c+"'><td>" + d.rno + "</td><td>" + d.name + "</td><td>" + d.eng + "</td><td>" + d.math + "</td><td>" + d.sci + "</td><td>" + total + "</td><td>" + per + "</td><td>" + result + "</td></tr>";
+
+
+            });
+            document.getElementById("tbldata").innerHTML = data;
+        }
+    </script>
+</head>
+
+<body onload="Display()">
+    <table border="1">
+        <thead>
+            <th>Roll No</th>
+            <th>Name</th>
+            <th>English</th>
+            <th>Math</th>
+            <th>Science</th>
+            <th>Total</th>
+            <th>Percentage</th>
+            <th>Result</th>
+        </thead>
+        <tbody id="tbldata">
+
+        </tbody>
+    </table>
+
+</body>
+
+</html>

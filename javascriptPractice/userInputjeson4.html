@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>user input into jeson array</title>
+    <script>
+        var student=[];
+        function Add()
+        {
+            var r = document.getElementById("txtrno").value;
+            var n = document.getElementById("txtname").value;
+            var st={"rno":r,"name":n};
+            student.push(st);
+            document.getElementById("txtrno").value="";
+            document.getElementById("txtname").value="";
+            display();
+        }
+        function display()
+        {
+            var data="";
+            student.forEach(function(d,i){
+                data += "<tr><td>"+d.rno+"</td><td>"+d.name+"</td></tr>"
+
+            });
+            document.getElementById("tbldata").innerHTML=data;
+        }
+    </script>
+</head>
+<body onload="display()">
+    <table border="1">
+        <div>
+            <label for="">Roll no</label><br><input type="text" id="txtrno"/><br>
+            <label for="">Name</label><br><input type="text" id="txtname"/><br>
+            <input type="button" value="Add" onclick="Add()"/>
+
+            
+            </div>
+            
+        <thead>
+            <tr>
+                <th>Roll No</th>
+                <th>Name</th>
+            </tr>
+        </thead>
+        <tbody id="tbldata"></tbody>
+
+    </table>
+    
+</body>
+</html>
